@@ -39,3 +39,8 @@ app.listen(port, () =>{
 //End point
 //Parameters
 //Body
+
+//Pasos para hacer proyecto: 
+//npm init
+//npm install
+//npm install express
