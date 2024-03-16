@@ -9,6 +9,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UIElements;
 
 public class SimonController : MonoBehaviour
 {
@@ -19,8 +21,11 @@ public class SimonController : MonoBehaviour
     bool playerTurn = false;
     int index;
     int level;
+    public TMP_Text currentScore;
+    public TMP_Text wildcard;
     void Start()
     {
+
         NewGame();
     }
 
@@ -34,13 +39,14 @@ public class SimonController : MonoBehaviour
         sequence = new List<int>();
         index = 0;
         level = 0;
+        currentScore.text = "Current score: "+level.ToString();
         AddNumber();
     }
 
     void AddNumber(){
         playerTurn = false;
         index = 0;
-        int num = Random.Range(0, buttons.Length);
+        int num = Random.Range(0, buttons.Length-1);
         sequence.Add(num);
         StartCoroutine(ShowSequence());
     }
@@ -58,12 +64,19 @@ public class SimonController : MonoBehaviour
 
     public void ButtonSelect(int buttonID){
         if (playerTurn){
+            buttons[buttonID].GetComponent<SimonButton>().HighLight();
+        if (buttonID == 4){
+            Destroy(buttons[buttonID]);
+            Destroy(wildcard);
+            buttonID = sequence[index];
+        }
         if (sequence[index] == buttonID){
             //Continue
             index++;
             //Check if the sequence is complete
             if (index == sequence.Count){
                 level++;
+                currentScore.text = "Current score: "+level.ToString();
                 PlayerPrefs.SetInt("score", level);
                 AddNumber();
             }
