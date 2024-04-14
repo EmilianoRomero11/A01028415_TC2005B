@@ -1,0 +1,36 @@
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .contenedor_azul
+   {
+    background-color: rgb(75, 95, 117);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+  .contenedor_naranja {
+    background-color: rgb(227, 165, 51);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .contenedor_blanco {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+
+  .centrado{
+    justify-content: center;
+  }
+
+  .imagenes{
+    text-align: center;
+    align-items: center;
+  }

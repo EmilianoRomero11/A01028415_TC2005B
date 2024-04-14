@@ -1,0 +1,43 @@
+div{
+    border: 2px solid red;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(129, 167, 96);
+    border: 1px solid #000;
+    border-radius: 10%;
+    border-style: dashed;
+    margin: 10px;
+    padding: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+body{
+    margin: 0;
+    background-color: rgb(24, 24, 22);
+}
+
+h2{
+    margin:0;
+}
+
+.box{
+    height: 500px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.box_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
